@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL Soluções</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="carrosel.css">
+</head>
+<header   id="topo" class="cabecalho">
+    <h1>GLsolucoes</h1>
+</header>
+<body>
+    <section class="conteudo-inicial">
+    <div class="conteudo-inicial-conteudo">
+    <div class="conteudo-inicial-texto">
+        <h1>PROTEJA SEU VEÍCULO SEM SAIR DE CASA.</h1>
+        <p>O risco de bater seu carro ou ser roubado é muito alto, não fique desprotegido. Faça agora uma cotação e contrate on-line.</p>
+    </div>
+    <div class="conteudo-inicial-formulario">
+        <h2>Proteja seu veículo. Faça sua cotação!</h2>
+        <form id="meuFormulario">
+            <div class="passo" id="passo1">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required placeholder="João da Silva" pattern="[A-Za-záàãâäéèêëíìîïóòôõöúùûüç ]+" title="Somente letras e espaços são permitidos no nome">
+
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular" required placeholder="(xx) xxxx-xxxx" pattern="^\(?[0-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}$" title="Insira um número de celular válido (apenas números)">
+
+                <label for="placa">Placa do Veículo (Não Obrigatório):</label>
+                <input type="text" id="placa" name="placa" placeholder="XXX-0000">
+
+                <button type="button" id="proximo">Próximo</button>
+            </div>
+
+            <div class="passo" id="passo2">
+                <label for="tipoVeiculo">Tipo de Veículo:</label>
+                <select id="tipoVeiculo" name="tipoVeiculo" required>
+                    <option value="">Selecione o tipo</option>
+                    <option value="carros">Carro</option>
+                    <option value="motos">Moto</option>
+                    <option value="caminhoes">Caminhão</option>
+                </select>
+
+                <label for="marca">Marca do Veículo:</label>
+                <select id="marca" name="marca" required>
+                    <option value="">Selecione a marca</option>
+                </select>
+
+                <label for="modelo">Modelo do Veículo:</label>
+                <select id="modelo" name="modelo" required>
+                    <option value="">Selecione o modelo</option>
+                </select>
+
+                <label for="ano">Ano do Veículo:</label>
+                <select id="ano" name="ano" required>
+                    <option value="">Selecione o ano</option>
+                </select>
+
+                <div class="botoes-passo2">
+                    <button type="button" id="voltar" class="botao-voltar">Voltar</button>
+                    <button type="submit" class="botao-proximo">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+        <div class="conteudo-incial-linha">
+            <ul>
+                <div>
+                    <p>1</p>
+                </div>
+                <li>
+                    <h3>Faça uma cotação</h3>
+                    <p>Descubra em tempo real o valor da mensalidade do seu veículo</p>
+                </li>
+                <div>
+                    <p>2</p>
+                </div>
+                <li>
+                    <h3>Contrate on-line</h3>
+                    <p>Escolha um plano, inclua opcionais e faça o pagamento on-line</p>
+                </li>
+                <div>
+                    <p>3</p>
+                </div>
+                <li>
+                    <h3>Faça sua vistoria</h3>
+                    <p>Baixe nosso aplicativo, faça sua própria vistoria e fique protegido mais rápido</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="conteudo-secundario">
+        <div class="conteudo-secundario-conteudo">
+            <div class="carousel-container">
+                <h2>Associações parceiras</h2>
+                <div class="carousel">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                </div>
+            </div>
+            <div class="carousel-container">
+                <h2>Seguradoras parceiras</h2>
+                <div class="carousel">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                <img class="unimed" src="img/unimed.png" alt="Logo 1">
+                </div>
+            </div>
+
+    <section class="beneficios">
+        <div class="beneficios-container">
+            <h2>Proteção Veicular Completa</h2>
+            <p>Com ressarcimento de até 100% da tabela FIPE</p>
+            <div class="beneficios-grid">
+                <div class="beneficio">
+                    <img src="img/Ativo 2.png" alt="Furto / Roubo">
+                    <div>
+                        <h3>Furto / Roubo</h3>
+                        <p>Seja ressarcido em até 100% do valor de tabela FIPE caso seu veículo seja roubado ou furtado.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/colisao.png" alt="Colisão">
+                    <div>
+                        <h3>Colisão</h3>
+                        <p>Em caso de acidente, nós providenciamos o conserto do seu veículo.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/perda-total.png" alt="Perda total">
+                    <div>
+                        <h3>Perda total</h3>
+                        <p>Se o estrago configurar Perda Total, nós iremos indenizá-lo por este prejuízo.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/incendio.png" alt="Incêndio">
+                    <div>
+                        <h3>Incêndio</h3>
+                        <p>Com a gente o seu veículo fica protegido em casos de incêndio com indenização total ou parcial.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/fenomenos-naturais.png" alt="Fenômenos naturais">
+                    <div>
+                        <h3>Fenômenos naturais</h3>
+                        <p>Se seu veículo for danificado por alagamentos, quedas de árvores ou chuvas de granizo, nós ressarciamos seu prejuízo.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/cobertura-brasil.png" alt="Cobertura em todo Brasil">
+                    <div>
+                        <h3>Cobertura em todo Brasil</h3>
+                        <p>Não importa onde aconteça o evento, você poderá contar conosco em todo o Brasil.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/carro-reserva.png" alt="Carro reserva">
+                    <div>
+                        <h3>Carro reserva</h3>
+                        <p>Disponha um carro reserva caso aconteça algum imprevisto e o seu precise ir para a oficina.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/protecao-terceiros.png" alt="Proteção para terceiros">
+                    <div>
+                        <h3>Proteção para terceiros</h3>
+                        <p>Caso você se envolva em um acidente com outro veículo, os consertos são por nossa conta.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="img/cobertura-vidros.png" alt="Cobertura para vidros">
+                    <div>
+                        <h3>Cobertura para vidros</h3>
+                        <p>Caso aconteça algum dano com seus vidros, podemos substituí-los por outros novinhos.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#topo">
+                <button class="cotacao-btn">Faça uma cotação</button>
+            </a>
+
+
+        </div>
+    </section>
+
+    <section class="depoimentos">
+        <h2 class="depoimentos-titulo">Depoimentos</h2>
+        <div class="depoimento">
+            <img src="caminho/para/imagem1.jpg" alt="Foto do Cliente 1" class="foto-cliente">
+            <p>"Este é um depoimento de um cliente satisfeito com nossos serviços. Agradecemos a confiança e a oportunidade de atendê-lo."</p>
+        </div>
+        <div class="depoimento">
+            <img src="caminho/para/imagem2.jpg" alt="Foto do Cliente 2" class="foto-cliente">
+            <p>"Adorei a experiência com a empresa! O atendimento foi excelente e os resultados superaram minhas expectativas."</p>
+        </div>
+        <div class="depoimento">
+            <img src="caminho/para/imagem3.jpg" alt="Foto do Cliente 3" class="foto-cliente">
+            <p>"Recomendo a empresa para todos que buscam qualidade e profissionalismo. Fiquei muito satisfeito com o serviço prestado."</p>
+        </div>
+        <div class="depoimento">
+            <img src="caminho/para/imagem4.jpg" alt="Foto do Cliente 4" class="foto-cliente">
+            <p>"Recomendo a empresa para todos que buscam qualidade e profissionalismo. Fiquei muito satisfeito com o serviço prestado."</p>
+        </div>
+    </section>
+
+
+    <script src="script.js"> </script>
+
+</body>
+</html>

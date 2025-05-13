@@ -1,0 +1,385 @@
+:root {
+  --roxo-principal: #272085;
+  --roxo-secundario: #240046;
+  --roxo-terciario: #692085;
+  --azul-principal: #205985;
+  --fonte-principal: "Montserrat", sans-serif;
+  --fonte-secundaria: 'Roboto', sans-serif;
+  --fundo-da-aplicação: #f3f3f3;
+  --preto-titulo: #292929;
+  --branco-texto: #f5f5f5;
+  --botao-cor: #82BB5D;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  font-size: 20px;
+  color: var(--preto-titulo);
+  background-color: var(--fundo-da-aplicação);
+}
+
+.cabecalho {
+  background-color: var(--roxo-principal);
+  color: var(--fundo-da-aplicação);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.conteudo-inicial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, var(--roxo-principal), var(--roxo-secundario));
+  color: var(--fundo-da-aplicação);
+  padding: 2% 15%;
+}
+
+.conteudo-inicial-conteudo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.conteudo-inicial-texto {
+  flex: 1;
+  max-width: 40%;
+}
+
+.conteudo-inicial-texto h1 {
+  font-size: 64px;
+  margin-bottom: 5%;
+  padding-top: 5vh;
+  font-family: var(--fonte-principal);
+  font-weight: 700;
+}
+
+.conteudo-inicial-texto p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: var(--fonte-secundaria);
+}
+
+.conteudo-inicial-formulario {
+  background-color: var(--fundo-da-aplicação);
+  color: var(--preto-titulo);
+  border-radius: 5px;
+  padding: 10px 30px;
+  width: 400px;
+  height: auto; /* Ajuste automático da altura */
+  margin-top: auto;
+}
+
+.conteudo-inicial-formulario h2 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto; /* Ajuste automático da altura */
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+}
+
+select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+}
+
+#passo1, #passo2, form, .conteudo-inicial-formulario {
+  box-sizing: border-box;
+}
+
+#passo1, #passo2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+  height: auto; /* Ajuste automático da altura */
+  margin: 0;
+  padding: 0;
+}
+
+#passo2 {
+  display: none;
+}
+
+.botao-voltar {
+  width: 80px; /* Aumentei a largura para o texto */
+  height: 40px; /* Ajustei a altura */
+  border: none;
+  background-color: #ddd;
+  color: #333; /* Cor do texto "Voltar" */
+  font-size: 16px; /* Tamanho da fonte */
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px; /* Adicionei bordas arredondadas */
+}
+
+.botao-voltar:hover {
+  background-color: #ccc;
+}
+
+#proximo {
+  box-sizing: border-box;
+  padding: 15px 20px; /* Ajustei o padding */
+  background-color: var(--botao-cor);
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Adicionei cursor pointer */
+}
+
+/* Continuação do styles.css */
+#proximo:hover {
+  background-color: #c9e6b6;
+  color: var(--fundo-da-aplicação);
+}
+
+.conteudo-incial-linha {
+  margin-top: 50px;
+}
+
+.conteudo-incial-linha div {
+  background-color: var(--fundo-da-aplicação);
+  color: var(--azul-principal);
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.conteudo-incial-linha ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+}
+
+.conteudo-incial-linha li {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.conteudo-incial-linha li h3 {
+  margin-bottom: 2vh;
+}
+
+.conteudo-incial-linha li p {
+  font-family: var(--fonte-secundaria);
+}
+
+.beneficios {
+  background-color: var(--fundo-da-aplicação);
+  padding: 20px 0;
+}
+
+.beneficios-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.beneficios-container h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.beneficios-container p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.beneficio {
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.beneficio img {
+  max-width: 60px;
+  margin-right: 10px;
+}
+
+.beneficio h3 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.beneficio p {
+  font-size: 0.8em;
+}
+
+.cotacao-btn {
+  background-color: var(--botao-cor);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 10px 40px;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer; /* Adicionei cursor pointer */
+}
+
+.cotacao-btn:hover {
+  background-color: #c9e6b6;
+  color: var(--fundo-da-aplicação);
+}
+
+.depoimentos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  background: linear-gradient(to top, var(--roxo-principal), var(--roxo-secundario));
+}
+
+.depoimento {
+  width: 80%;
+  max-width: 800px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--fundo-da-aplicação);
+}
+
+.foto-cliente {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  object-fit: cover;
+}
+
+.depoimento p {
+  margin-left: 100px;
+}
+
+.depoimentos-titulo {
+  color: var(--fundo-da-aplicação);
+  padding-bottom: 2vh;
+}
+
+/* ... todo o seu CSS anterior ... */
+
+.botao-proximo {
+  box-sizing: border-box;
+  padding: 13px;
+  background-color: var(--botao-cor);
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 16px; /* Mantenha o tamanho da fonte consistente */
+  cursor: pointer; /* Garante que tenha o cursor de clique */
+}
+
+.botao-proximo:hover {
+  background-color: #c9e6b6;
+  color: var(--fundo-da-aplicação);
+}
+
+.botoes-passo2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 720px) {
+  .conteudo-inicial h1 {
+      font-size: 40px;
+  }
+
+  #proximo {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .conteudo-incial-linha div {
+      width: 100%;
+  }
+
+  .beneficios-grid {
+      grid-template-columns: 1fr;
+      margin: 5vh;
+  }
+
+  .conteudo-inicial-conteudo {
+      flex-direction: column;
+  }
+
+  .conteudo-inicial-texto {
+      max-width: 100%;
+      text-align: center;
+  }
+
+  .conteudo-inicial-formulario {
+      width: 100%;
+      margin-top: 20px;
+  }
+
+  .conteudo-incial-linha ul {
+      flex-direction: column;
+  }
+
+  .conteudo-incial-linha li {
+      margin: 20px 0;
+  }
+
+  form {
+      width: 100%;
+      padding: 10px;
+  }
+}
