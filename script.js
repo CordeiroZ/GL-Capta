@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const marcaSelect = document.getElementById("marca");
     const modeloSelect = document.getElementById("modelo");
     const anoSelect = document.getElementById("ano");
+    const submitButton = form.querySelector('.botao-proximo'); // Get the submit button
+    const loadingSpinner = form.querySelector('.loading-spinner'); // Get the loading spinner
 
     let nomeValido = false;
     let celularValido = false;
@@ -50,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
+        // Show loading spinner and disable the button
+        submitButton.style.display = 'none';
+        loadingSpinner.style.display = 'inline-block';
+        submitButton.disabled = true;
+
         const tipoVeiculo = tipoVeiculoSelect.value;
         const marcaText = marcaSelect.options[marcaSelect.selectedIndex]?.text || "";
         const modeloText = modeloSelect.options[modeloSelect.selectedIndex]?.text || "";
@@ -59,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const dados = new URLSearchParams();
         dados.append("nome", nome.value);
         dados.append("celular", celular.value);
-        dados.append("placa", placaValue); // Adiciona a placa aos dados
+        dados.append("placa", placaValue);
         dados.append("tipoVeiculo", tipoVeiculo);
         dados.append("marca", marcaText);
         dados.append("modelo", modeloText);
@@ -85,6 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error('Erro:', error);
             alert('Erro ao enviar os dados.');
+        })
+        .finally(() => {
+            // Hide loading spinner and re-enable the button, regardless of success or failure
+            submitButton.style.display = 'block';
+            loadingSpinner.style.display = 'none';
+            submitButton.disabled = false;
         });
     });
 

@@ -149,6 +149,23 @@ select {
   background-color: #ccc;
 }
 
+.loading-spinner {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid var(--botao-cor); /* Green from your theme */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px; /* Space between button and spinner */
+    display: inline-block; /* Aligns with button */
+    vertical-align: middle; /* Vertically aligns with button */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 #proximo {
   box-sizing: border-box;
   padding: 15px 20px; /* Ajustei o padding */
@@ -164,7 +181,7 @@ select {
 /* Continuação do styles.css */
 #proximo:hover {
   background-color: #c9e6b6;
-  color: var(--fundo-da-aplicação);
+  color: var(--preto-titulo);
 }
 
 .conteudo-incial-linha {
@@ -297,6 +314,8 @@ select {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  margin-right: 20px;
+  border: 2px solid var(--roxo-terciario);
   position: absolute;
   top: 20px;
   left: 20px;
