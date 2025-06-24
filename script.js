@@ -173,3 +173,44 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+/* -----------------------------------------------------------------------------------------------------------------
+----------------------------------------Planilha--------------------------------------------------------------------
+// function doPost(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getActiveSheet();
+
+  var id = getNextId(sheet);
+  var nome = validarCampo(e.parameter.nome);
+  var celular = validarCampo(e.parameter.celular);
+  var placa = validarCampo(e.parameter.placa);
+  var tipoVeiculo = validarCampo(e.parameter.tipoVeiculo);
+  var marca = validarCampo(e.parameter.marca);
+  var modelo = validarCampo(e.parameter.modelo);
+  var ano = validarCampo(e.parameter.ano);
+
+  // Adiciona os dados na planilha
+  sheet.appendRow([id, nome, celular, placa, tipoVeiculo, marca, modelo, ano]);
+
+  return ContentService.createTextOutput("Dados recebidos com sucesso!");
+}
+
+// Função auxiliar para gerar o próximo ID
+function getNextId(sheet) {
+  var lastRow = sheet.getLastRow();
+  if (lastRow === 0) {
+    return 1;
+  } else {
+    var lastId = sheet.getRange(lastRow, 1).getValue();
+    return parseInt(lastId) + 1;
+  }
+}
+
+// Substitui campo vazio ou undefined por "-"
+function validarCampo(campo) {
+  return campo && campo.trim() !== "" ? campo.trim() : "-";
+}
+
+*/ 
+

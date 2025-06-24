@@ -297,6 +297,11 @@ select {
   background: linear-gradient(to top, var(--roxo-principal), var(--roxo-secundario));
 }
 
+.depoimentos-titulo {
+  color: var(--fundo-da-aplicação);
+  padding-bottom: 2vh;
+}
+
 .depoimento {
   width: 80%;
   max-width: 800px;
@@ -304,31 +309,45 @@ select {
   padding: 20px;
   border: 2px solid #ccc;
   border-radius: 10px;
-  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background-color: var(--fundo-da-aplicação);
+  align-items: center;
+}
+
+.cliente-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  width: 100px;
+  flex-shrink: 0;
 }
 
 .foto-cliente {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-right: 20px;
   border: 2px solid var(--roxo-terciario);
-  position: absolute;
-  top: 20px;
-  left: 20px;
   object-fit: cover;
 }
 
+.nome-cliente {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+  color: var(--texto-principal); /* Ajuste se necessário */
+  font-size: 16px; /* Tamanho da fonte do nome */
+}
+
 .depoimento p {
-  margin-left: 100px;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .depoimentos-titulo {
   color: var(--fundo-da-aplicação);
-  padding-bottom: 2vh;
+  padding-bottom: 1vh;
 }
 
 /* ... todo o seu CSS anterior ... */

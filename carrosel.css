@@ -13,7 +13,7 @@
 /* Linha que contém as logos */
 .carousel {
     display: flex;
-    gap: 70px; /* Reduzi o gap para um visual mais coeso inicialmente */
+    gap: 60px; /* Reduzi o gap para um visual mais coeso inicialmente */
     padding: 2vh 5vw; /* Adicionei padding horizontal para evitar que as logos toquem as bordas */
     transition: transform 0.5s ease-in-out; /* Transição suave para o movimento */
     white-space: nowrap; /* Remove a quebra de linha para o conteúdo do carrossel */
@@ -27,7 +27,7 @@
 /* Estilização das imagens */
 .carousel img {
     width: auto; /* Deixa a largura automática para manter a proporção */
-    max-width: 200px; /* Largura máxima das logos */
+    max-width: 230px; /* Largura máxima das logos */
     height: auto; /* Altura automática para manter a proporção */
     max-height: 70px; /* Altura máxima das logos */
     transition: transform 0.3s ease-in-out; /* Transição suave para o efeito de hover na imagem */
