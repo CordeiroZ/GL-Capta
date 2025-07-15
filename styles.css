@@ -25,10 +25,13 @@ body {
 }
 
 .cabecalho {
-  background-color: var(--roxo-principal);
-  color: var(--fundo-da-aplicação);
-  padding: 10px 0;
-  text-align: center;
+  display: flex;
+  padding: 0% 15%
+}
+
+.cabecalho img {
+  width: 200px;
+  height: auto;
 }
 
 .conteudo-inicial {
@@ -328,7 +331,7 @@ select {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 2px solid var(--roxo-terciario);
+  border: 2px solid var(--azul-principal);
   object-fit: cover;
 }
 
@@ -420,4 +423,28 @@ select {
       width: 100%;
       padding: 10px;
   }
+
+  .cabecalho {
+    justify-content: center; /* Centraliza a logo no meio */
+  }
+
+  .depoimento {
+ flex-direction: column; /* Empilha os itens verticalmente */
+ align-items: center; /* Centraliza os itens horizontalmente */
+ text-align: center; /* Centraliza o texto */
+ }
+
+ .cliente-info {
+ margin-right: 0; /* Remove a margem à direita */
+ margin-bottom: 15px; /* Adiciona espaço abaixo da foto e nome */
+ width: auto; /* Permite que a largura se ajuste ao conteúdo */
+ }
+
+ .foto-cliente {
+ width: 150px; /* Aumenta a largura da foto */
+ height: 150px; /* Define uma altura para tornar a foto retangular */
+ border-radius: 5%; /* Remove o arredondamento da borda */
+ }
+
+
 }
