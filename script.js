@@ -81,20 +81,24 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => {
             if (response.ok) {
-                alert('Dados enviados com sucesso!');
-                form.reset();
-                passo2.style.display = 'none';
-                passo1.style.display = 'block';
+                // *** AQUI É A ÚNICA MODIFICAÇÃO QUE VOCÊ PEDIU ***
+                // Remova o alert e o reset do formulário daqui, pois a nova página fará o feedback.
+                // alert('Dados enviados com sucesso!'); // REMOVER ESTA LINHA
+                // form.reset(); // REMOVER ESTA LINHA
+                // passo2.style.display = 'none'; // REMOVER ESTA LINHA
+                // passo1.style.display = 'block'; // REMOVER ESTA LINHA
+
+                window.location.href = 'sucesso.html'; // REDIRECIONA PARA A PÁGINA DE SUCESSO
             } else {
                 throw new Error('Erro ao enviar os dados.');
             }
         })
         .catch(error => {
             console.error('Erro:', error);
-            alert('Erro ao enviar os dados.');
+            alert('Erro ao enviar os dados.'); // Manter o alert de erro
         })
         .finally(() => {
-            // Hide loading spinner and re-enable the button, regardless of success or failure
+            // Esconda o spinner e re-habilite o botão, independentemente do sucesso ou falha
             submitButton.style.display = 'block';
             loadingSpinner.style.display = 'none';
             submitButton.disabled = false;
@@ -173,44 +177,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-/* -----------------------------------------------------------------------------------------------------------------
-----------------------------------------Planilha--------------------------------------------------------------------
-// function doPost(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getActiveSheet();
-
-  var id = getNextId(sheet);
-  var nome = validarCampo(e.parameter.nome);
-  var celular = validarCampo(e.parameter.celular);
-  var placa = validarCampo(e.parameter.placa);
-  var tipoVeiculo = validarCampo(e.parameter.tipoVeiculo);
-  var marca = validarCampo(e.parameter.marca);
-  var modelo = validarCampo(e.parameter.modelo);
-  var ano = validarCampo(e.parameter.ano);
-
-  // Adiciona os dados na planilha
-  sheet.appendRow([id, nome, celular, placa, tipoVeiculo, marca, modelo, ano]);
-
-  return ContentService.createTextOutput("Dados recebidos com sucesso!");
-}
-
-// Função auxiliar para gerar o próximo ID
-function getNextId(sheet) {
-  var lastRow = sheet.getLastRow();
-  if (lastRow === 0) {
-    return 1;
-  } else {
-    var lastId = sheet.getRange(lastRow, 1).getValue();
-    return parseInt(lastId) + 1;
-  }
-}
-
-// Substitui campo vazio ou undefined por "-"
-function validarCampo(campo) {
-  return campo && campo.trim() !== "" ? campo.trim() : "-";
-}
-
-*/ 
-

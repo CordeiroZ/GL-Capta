@@ -1,10 +1,11 @@
+
 .carousel-container {
     overflow: hidden; /* Oculta os elementos que saem da tela */
     position: relative;
     width: 100%;
     background-color: var(--fundo-da-aplicação);
     padding: 20px 0; /* Aumentei um pouco o padding vertical */
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex; /* Adicionado para centralizar o conteúdo inicialmente */
     flex-direction: column; /* Garante que os itens internos sejam organizados em coluna */
     align-items: center; /* Centraliza os itens horizontalmente dentro da coluna */
@@ -23,19 +24,58 @@
     text-align: center; /* Centraliza o texto horizontalmente */
     margin-bottom: 20px; /* Adicionei um pouco de margem abaixo do título */
     width: 100%; /* Garante que o título ocupe a largura total para centralizar */
+    font-family: var(--fonte-principal); /* Define a fonte principal para o título */
+    font-size: 1.5em; /* Tamanho do texto do título */  
 }
 /* Estilização das imagens */
 .carousel img {
     width: auto; /* Deixa a largura automática para manter a proporção */
-    max-width: 230px; /* Largura máxima das logos */
+    max-width: 150px; /* Largura máxima das logos */
     height: auto; /* Altura automática para manter a proporção */
-    max-height: 70px; /* Altura máxima das logos */
+    max-height: 50px; /* Altura máxima das logos */
     transition: transform 0.3s ease-in-out; /* Transição suave para o efeito de hover na imagem */
 }
 
 /* Efeito de destaque ao passar o mouse sobre a logo */
 .carousel img:hover {
-    transform: scale(1.5); /* Aumenta levemente a escala da logo */ 
+    transform: scale(1.3); /* Aumenta levemente a escala da logo */ 
     cursor: pointer; /* Muda o cursor para indicar que é interativo */
 
+}
+
+@media screen and (max-width: 720px) {
+  .carousel-container {
+    /* Remove overflow-x daqui se foi adicionado anteriormente */
+    /* overflow-x: hidden; */ /* Ou defina como hidden se não houver outras necessidades de rolagem */
+    /* Certifique-se de que o container tenha uma largura definida ou flex para que o h2 centralize */
+    width: 100%; /* Garante que o container ocupe a largura total */
+    display: flex; /* Mantém o flex para centralizar o h2 e o carousel */
+    flex-direction: column; /* Organiza h2 e carousel em coluna */
+    align-items: center; /* Centraliza horizontalmente o h2 e o carousel */
+  }
+
+  .carousel-container h2 {
+    /* Já está centralizado e com width: 100% no CSS original, o que é bom. */
+    /* Apenas garanta que não haja propriedades que impeçam sua centralização */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .carousel {
+    overflow-x: auto; /* Apenas o carrossel de imagens vai rolar horizontalmente */
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos iOS */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 10px 20px;
+    width: 100%; /* Garante que o carrossel ocupe a largura total e possa rolar */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+  }
+
+  .carousel img {
+    max-width: 120px;
+    max-height: 40px;
+    flex-shrink: 0; /* Impede que as imagens encolham para caber no espaço */
+  }
 }

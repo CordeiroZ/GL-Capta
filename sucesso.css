@@ -1,0 +1,129 @@
+/* sucesso.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da tela */
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Ou a fonte que você preferir */
+    background-color: var(--fundo-da-aplicação, #f4f4f4); /* Cor de fundo principal */
+    color: #333;
+}
+
+.success-page-header {
+    background-color: #fff; /* Fundo branco para o cabeçalho */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.success-page-header img {
+    max-width: 180px; /* Ajuste o tamanho da logo */
+    height: auto;
+}
+
+.success-content-wrapper {
+    flex-grow: 1; /* Permite que este wrapper ocupe o espaço restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--roxo-principal, #4a148c); /* Cor de fundo da parte inferior (similar ao roxo do seu site) */
+    padding: 40px 20px; /* Padding para garantir espaçamento */
+}
+
+.success-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    position: relative; /* Para posicionar elementos internos se necessário */
+}
+
+.success-icon {
+    width: 80px; /* Tamanho do ícone de sino ou check */
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.success-box h1 {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.success-box p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.success-box .whatsapp-link {
+    display: inline-block;
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: 20px;
+}
+
+.success-box .whatsapp-link:hover {
+    background-color: #1DA851;
+}
+
+.whatsapp-icon-success {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .success-box {
+        padding: 30px;
+    }
+    .success-box h1 {
+        font-size: 1.8em;
+    }
+    .success-box p {
+        font-size: 1em;
+    }
+    .success-box .whatsapp-link {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .whatsapp-icon-success {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .success-box {
+        padding: 25px;
+        border-radius: 8px;
+    }
+    .success-box h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .success-box p {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+    .success-icon {
+        width: 60px;
+        margin-bottom: 20px;
+    }
+}
