@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let nomeValido = false;
     let celularValido = false;
 
+
+    window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    });
+
     function validarCampo(input, regex) {
         if (!regex.test(input.value)) {
             input.style.border = '2px solid red';
