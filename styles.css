@@ -408,7 +408,7 @@ select {
 }
 
 .footer a {
-    color: #4CAF50;
+    color: #0a93c9;
     text-decoration: none;
 }
 
@@ -488,6 +488,5 @@ select {
  height: 150px; /* Define uma altura para tornar a foto retangular */
  border-radius: 5%; /* Remove o arredondamento da borda */
  }
-
 
 }
