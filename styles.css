@@ -62,11 +62,11 @@ body {
 
 .conteudo-inicial-texto {
   flex: 1;
-  max-width: 40%;
+  max-width: 50%;
 }
 
 .conteudo-inicial-texto h1 {
-  font-size: 64px;
+  font-size: 68px;
   margin-bottom: 5%;
   padding-top: 5vh;
   font-family: var(--fonte-principal);
@@ -74,7 +74,7 @@ body {
 }
 
 .conteudo-inicial-texto p {
-  font-size: 20px;
+  font-size: 35px;
   margin-bottom: 20px;
   font-family: var(--fonte-secundaria);
 }
@@ -458,6 +458,12 @@ select {
       max-width: 100%;
       text-align: center;
   }
+
+  .conteudo-inicial-texto p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: var(--fonte-secundaria);
+}
 
   .conteudo-inicial-formulario {
       width: 100%;

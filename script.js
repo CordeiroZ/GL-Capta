@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nome = document.getElementById('nome');
     const celular = document.getElementById('celular');
     const placa = document.getElementById('placa');
+    const preferenciaSelect = document.getElementById('preferencia'); // PEGANDO A PREFERÊNCIA
     const proximo = document.getElementById('proximo');
     const passo1 = document.getElementById('passo1');
     const passo2 = document.getElementById('passo2');
@@ -11,15 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const marcaSelect = document.getElementById("marca");
     const modeloSelect = document.getElementById("modelo");
     const anoSelect = document.getElementById("ano");
-    const submitButton = form.querySelector('.botao-proximo'); // Get the submit button
-    const loadingSpinner = form.querySelector('.loading-spinner'); // Get the loading spinner
+    const submitButton = form.querySelector('.botao-proximo');
+    const loadingSpinner = form.querySelector('.loading-spinner');
 
     let nomeValido = false;
     let celularValido = false;
 
-
     window.addEventListener('resize', () => {
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
     });
 
     function validarCampo(input, regex) {
@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        // Show loading spinner and disable the button
         submitButton.style.display = 'none';
         loadingSpinner.style.display = 'inline-block';
         submitButton.disabled = true;
@@ -67,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const modeloText = modeloSelect.options[modeloSelect.selectedIndex]?.text || "";
         const anoText = anoSelect.options[anoSelect.selectedIndex]?.text || "";
         const placaValue = placa.value;
+        const preferenciaValue = preferenciaSelect.value; // PEGANDO O VALOR DA PREFERÊNCIA
 
         const dados = new URLSearchParams();
         dados.append("nome", nome.value);
@@ -76,8 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
         dados.append("marca", marcaText);
         dados.append("modelo", modeloText);
         dados.append("ano", anoText);
+        dados.append("preferencia", preferenciaValue); // ENVIANDO JUNTO
 
-        fetch('https://script.google.com/macros/s/AKfycbxaWiBu1nYinv-dRD7Q9V4w57O9HCdVl_hKHOK-N7JugapYXe29WRnZxS1-9VwZHguJ/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbwRgytGB4U3ldoppcRO3QrbanRsifmRlr29RLV2UwFdzEGv5oHcOlFDyEftpCq_gI4X/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -86,24 +87,16 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => {
             if (response.ok) {
-                // *** AQUI É A ÚNICA MODIFICAÇÃO QUE VOCÊ PEDIU ***
-                // Remova o alert e o reset do formulário daqui, pois a nova página fará o feedback.
-                // alert('Dados enviados com sucesso!'); // REMOVER ESTA LINHA
-                // form.reset(); // REMOVER ESTA LINHA
-                // passo2.style.display = 'none'; // REMOVER ESTA LINHA
-                // passo1.style.display = 'block'; // REMOVER ESTA LINHA
-
-                window.location.href = 'sucesso.html'; // REDIRECIONA PARA A PÁGINA DE SUCESSO
+                window.location.href = 'sucesso.html';
             } else {
                 throw new Error('Erro ao enviar os dados.');
             }
         })
         .catch(error => {
             console.error('Erro:', error);
-            alert('Erro ao enviar os dados.'); // Manter o alert de erro
+            alert('Erro ao enviar os dados.');
         })
         .finally(() => {
-            // Esconda o spinner e re-habilite o botão, independentemente do sucesso ou falha
             submitButton.style.display = 'block';
             loadingSpinner.style.display = 'none';
             submitButton.disabled = false;
