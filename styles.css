@@ -36,8 +36,9 @@ body {
 }
 .cabecalho {
   display: flex;
-  padding: 0% 15%
+  padding: 0% 15%;
 }
+
 
 .cabecalho img {
   width: 200px;
@@ -49,7 +50,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to top, var(--roxo-principal), var(--roxo-secundario));
+  background: linear-gradient(to top, #192F6A, #2E458E);
   color: var(--fundo-da-aplicação);
   padding: 2% 15%;
 }
@@ -306,7 +307,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to top, var(--roxo-principal), var(--roxo-secundario));
+  background: linear-gradient(to top, #192F6A, #2E458E);
   padding-bottom: 5vh;
 }
 
