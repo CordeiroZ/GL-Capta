@@ -1,4 +1,4 @@
-// validarCampo.js
+// validarCampo.js s
 export function validarCampo(input, regex) {
     if (!regex.test(input.value)) {
         input.style.border = '2px solid red';
