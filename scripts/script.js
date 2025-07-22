@@ -1,8 +1,12 @@
+// script.js
+import { validarCampo } from './validarCampo.js';
+import { fetchMarcas, fetchModelos, fetchAnos } from './fetchFipe.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const nome = document.getElementById('nome');
     const celular = document.getElementById('celular');
     const placa = document.getElementById('placa');
-    const preferenciaSelect = document.getElementById('preferencia'); // PEGANDO A PREFERÊNCIA
+    const preferenciaSelect = document.getElementById('preferencia');
     const proximo = document.getElementById('proximo');
     const passo1 = document.getElementById('passo1');
     const passo2 = document.getElementById('passo2');
@@ -21,16 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', () => {
         document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
     });
-
-    function validarCampo(input, regex) {
-        if (!regex.test(input.value)) {
-            input.style.border = '2px solid red';
-            return false;
-        } else {
-            input.style.border = '1px solid #ccc';
-            return true;
-        }
-    }
 
     nome.addEventListener('input', function () {
         nomeValido = validarCampo(nome, /^[A-Za-záàãâäéèêëíìîïóòôõöúùûüç ]+$/);
@@ -66,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const modeloText = modeloSelect.options[modeloSelect.selectedIndex]?.text || "";
         const anoText = anoSelect.options[anoSelect.selectedIndex]?.text || "";
         const placaValue = placa.value;
-        const preferenciaValue = preferenciaSelect.value; // PEGANDO O VALOR DA PREFERÊNCIA
+        const preferenciaValue = preferenciaSelect.value;
 
         const dados = new URLSearchParams();
         dados.append("nome", nome.value);
@@ -76,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dados.append("marca", marcaText);
         dados.append("modelo", modeloText);
         dados.append("ano", anoText);
-        dados.append("preferencia", preferenciaValue); // ENVIANDO JUNTO
+        dados.append("preferencia", preferenciaValue);
 
         fetch('https://script.google.com/macros/s/AKfycbwRgytGB4U3ldoppcRO3QrbanRsifmRlr29RLV2UwFdzEGv5oHcOlFDyEftpCq_gI4X/exec', {
             method: 'POST',
@@ -105,49 +99,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tipoVeiculoSelect.addEventListener("change", () => {
         const tipoVeiculo = tipoVeiculoSelect.value;
+        // Clear dependent selects before fetching new data
         marcaSelect.innerHTML = '<option value="">Selecione a marca</option>';
         modeloSelect.innerHTML = '<option value="">Selecione o modelo</option>';
         anoSelect.innerHTML = '<option value="">Selecione o ano</option>';
 
         if (tipoVeiculo) {
-            fetch(`https://parallelum.com.br/fipe/api/v1/${tipoVeiculo}/marcas`)
-                .then((response) => response.json())
-                .then((marcas) => {
-                    marcas.forEach((marca) => {
-                        const option = document.createElement("option");
-                        option.value = marca.codigo;
-                        option.textContent = marca.nome;
-                        marcaSelect.appendChild(option);
-                    });
-                })
-                .catch((error) => {
-                    console.error("Erro ao buscar marcas:", error);
-                    alert(`Erro ao buscar marcas: ${error.message}`);
-                });
+            fetchMarcas(tipoVeiculo, marcaSelect);
         }
     });
 
     marcaSelect.addEventListener("change", () => {
         const tipoVeiculo = tipoVeiculoSelect.value;
         const marcaId = marcaSelect.value;
+        // Clear dependent selects before fetching new data
         modeloSelect.innerHTML = '<option value="">Selecione o modelo</option>';
         anoSelect.innerHTML = '<option value="">Selecione o ano</option>';
 
         if (marcaId) {
-            fetch(`https://parallelum.com.br/fipe/api/v1/${tipoVeiculo}/marcas/${marcaId}/modelos`)
-                .then((response) => response.json())
-                .then((modelos) => {
-                    modelos.modelos.forEach((modelo) => {
-                        const option = document.createElement("option");
-                        option.value = modelo.codigo;
-                        option.textContent = modelo.nome;
-                        modeloSelect.appendChild(option);
-                    });
-                })
-                .catch((error) => {
-                    console.error("Erro ao buscar modelos:", error);
-                    alert(`Erro ao buscar modelos: ${error.message}`);
-                });
+            fetchModelos(tipoVeiculo, marcaId, modeloSelect);
         }
     });
 
@@ -155,23 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const tipoVeiculo = tipoVeiculoSelect.value;
         const marcaId = marcaSelect.value;
         const modeloId = modeloSelect.value;
+        // Clear dependent select before fetching new data
         anoSelect.innerHTML = '<option value="">Selecione o ano</option>';
 
         if (marcaId && modeloId) {
-            fetch(`https://parallelum.com.br/fipe/api/v1/${tipoVeiculo}/marcas/${marcaId}/modelos/${modeloId}/anos`)
-                .then((response) => response.json())
-                .then((anos) => {
-                    anos.forEach((ano) => {
-                        const option = document.createElement("option");
-                        option.value = ano.codigo;
-                        option.textContent = ano.nome;
-                        anoSelect.appendChild(option);
-                    });
-                })
-                .catch((error) => {
-                    console.error("Erro ao buscar anos:", error);
-                    alert(`Erro ao buscar anos: ${error.message}`);
-                });
+            fetchAnos(tipoVeiculo, marcaId, modeloId, anoSelect);
         }
     });
 });
