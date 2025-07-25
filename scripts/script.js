@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dados.append("ano", anoText);
         dados.append("preferencia", preferenciaValue);
 
-        fetch('https://script.google.com/macros/s/AKfycbwRgytGB4U3ldoppcRO3QrbanRsifmRlr29RLV2UwFdzEGv5oHcOlFDyEftpCq_gI4X/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbz03Q6l2wjp9D4giSyDbK9Acj0KtBKoD9qc72oe6MyrDG4WblWEQop7XRcncnhNhYDz/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

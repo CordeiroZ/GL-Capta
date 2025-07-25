@@ -11,8 +11,8 @@ body {
 }
 
 .success-page-header {
-    background-color: #fff; /* Fundo branco para o cabeçalho */
-    padding: 20px;
+    background-color: #fcfcfcb2; /* Fundo branco para o cabeçalho */
+    padding: 10px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -43,9 +43,16 @@ body {
 }
 
 .success-icon {
-    width: 80px; /* Tamanho do ícone de sino ou check */
+    width: 80px; /* Aumentei o tamanho para ficar mais visível */
     height: auto;
     margin-bottom: 25px;
+    /* Para centralizar o sino, como ele já está dentro de um container com text-align: center,
+       e é um elemento de bloco/inline-block, ele já estará centralizado horizontalmente.
+       Se fosse um elemento inline puro, precisaríamos de `display: block; margin: 0 auto;`
+       ou flexbox no pai. No seu caso, o `text-align: center` no `.success-box` já resolve. */
+    display: block; /* Garante que o margin auto funcione para centralizar se não for um SVG inline */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
 }
 
 .success-box h1 {
@@ -64,10 +71,12 @@ body {
 }
 
 .success-box .whatsapp-link {
-    display: inline-block;
+    display: flex; /* <-- MUDANÇA AQUI: Usa flexbox para alinhar o ícone e o texto */
+    justify-content: center; /* <-- MUDANÇA AQUI: Centraliza o conteúdo (ícone + texto) */
+    align-items: center; /* <-- MUDANÇA AQUI: Alinha verticalmente o ícone e o texto */
     background-color: #25D366; /* Cor do WhatsApp */
     color: white;
-    padding: 15px 30px;
+    padding: 10px 50px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
@@ -79,13 +88,13 @@ body {
 
 .success-box .whatsapp-link:hover {
     background-color: #86f0b0;
+    color: #333; /* Muda a cor do texto ao passar o mouse */
 }
 
 .whatsapp-icon-success {
     width: 28px;
     height: 28px;
-    vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 10px; /* <-- MUDANÇA AQUI: Adiciona espaço à direita do ícone */
 }
 
 /* Responsividade */
